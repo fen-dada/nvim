@@ -1,4 +1,4 @@
--- vim.cmd ('autocmd')
+--vim.cmd ('autocmd')
 
 vim.scriptencoding='utf-8'
 vim.opt.encoding='utf-8'
@@ -15,14 +15,14 @@ vim.opt.cmdheight = 2
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 2
-vim.opt.shell = 'fish'
+vim.opt.shell = '/bin/zsh'
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 vim.opt.ai = true -- Auto indent
 vim.opt.si = true -- Smart indent
 vim.opt.wrap = false -- No wrap lines

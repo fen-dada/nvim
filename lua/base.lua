@@ -6,6 +6,8 @@ vim.opt.fileencoding='utf-8'
 
 vim.wo.number=true
 
+vim.cmd('hi Normal ctermfg=252 ctermbg=none')
+
 vim.opt.title=true
 vim.opt.autoindent = true
 vim.opt.hlsearch = true
@@ -42,4 +44,22 @@ vim.cmd([[let &t_Cs = "\e[4:0m"]])
 
 -- Add asterists in block comments
 vim.opt.formatoptions:append {'r'}
+
+if vim.g.neovide then
+  vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
+  vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
+  vim.keymap.set('v', '<D-c>', '"+y') -- Copy
+  vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
+  vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
+  vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
+  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+end
+
+-- Allow clipboard copy paste in neovim
+vim.g.neovide_input_use_logo = 1
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+
 

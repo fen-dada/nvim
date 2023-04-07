@@ -8,6 +8,10 @@ use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-dev
   -- Color Scheme
   use 'rebelot/kanagawa.nvim'
 
+   -- use {'akinsho/toggleterm.nvim',tag = "v2.*" }
+   use {'akinsho/toggleterm.nvim', tag = 'v2.*'}
+       
+
   use { 'CRAG664/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
   --use 'mfussenegger/nvim-dap'
     
@@ -21,6 +25,7 @@ end}
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 }
+
 
   use 'neovim/nvim-lspconfig'
   -- Unless you are still migrating, remove the deprecated commands from v1.x
@@ -63,5 +68,4 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 
 end)
-
 

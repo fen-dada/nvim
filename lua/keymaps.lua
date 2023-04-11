@@ -13,4 +13,5 @@ keymap("v",">",">gv",opts)
 
 keymap("v","<?-j>",":m  .+1<cr>==",opts)
 keymap("v","<?-k>",":m  .-2<cr>==",opts)
-
+-- keymap("n","<SSSS->",":BufferLineMoveNext",opts)
+keymap("n","<S-t>",":NvimTreeFocus<cr>",opts)

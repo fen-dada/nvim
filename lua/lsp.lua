@@ -1,4 +1,5 @@
   --use 'hrsh6th/nvim-cmp' -- Autocompletion plugin
+  --
   --use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   --use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   --use 'L3MON4D3/LuaSnip' -- Snippets plugin
@@ -36,7 +37,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<Space-q>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -45,7 +46,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<S-Space>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then

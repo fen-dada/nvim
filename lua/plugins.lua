@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
 
   use 'wbthomason/packer.nvim'
+ -- use { "zbirenbaum/copilot.lua" }
   -- using packer.nvim
 use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',config = function() require("bufferline").setup{} end}  
   -- Color Scheme
@@ -58,6 +59,14 @@ require('kanagawa').setup({
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
 -- examples for your init.lua
+use {
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({})
+  end,
+}
 
 use {
   'nvim-tree/nvim-tree.lua',

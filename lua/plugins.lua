@@ -10,10 +10,32 @@ use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-dev
   use 'rebelot/kanagawa.nvim'
 
    -- use {'akinsho/toggleterm.nvim',tag = "v2.*" }
-   use {'akinsho/toggleterm.nvim', tag = 'v2.*'}
-       
+   use {'akinsho/toggleterm.nvim', tag = 'v2.*',require=function()
+    require("toggleterm").setup({
+        open_mapping = [[<c-\>]],
 
-  use { 'CRAG664/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+        start_in_insert=true,
+
+        direction = 'float',
+
+        size=20
+    })end
+   }
+       
+   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+
+  use { 'crag664/code_runner.nvim', require = "nvim-lua/plenary.nvim",config = function()  require('code_runner').setup({
+    -- put here the commands by filetype
+    filetype = {
+		    java = "cd $dir && javac $filename && java $filenamewithoutext",
+		    python = "python -u",
+		    typescript = "deno run",
+		    rust = "cd $dir && rustc $filename && $dir/$filenamewithoutext"
+	    },
+        })
+    end
+}
   --use 'mfussenegger/nvim-dap'
     
   use {'windwp/windline.nvim',config = function() require('wlsample.airline')
@@ -64,7 +86,49 @@ use {
   cmd = "Copilot",
   event = "InsertEnter",
   config = function()
-    require("copilot").setup({})
+ require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = false,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+      refresh = "gr",
+      open = "<M-CR>"
+    },
+    layout = {
+      position = "bottom", -- | top | left | right
+      ratio = 0.4
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = false,
+    debounce = 75,
+    keymap = {
+      accept = "<M-l>",
+      accept_word = false,
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
+  },
+  filetypes = {
+    yaml = false,
+    markdown = false,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 16.x
+  server_opts_overrides = {},
+})
   end,
 }
 
@@ -74,7 +138,15 @@ use {
     'nvim-tree/nvim-web-devicons', -- optional
   },
   config = function()
-    require("nvim-tree").setup {}
+    require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+}) 
   end
 }
 end)

@@ -14,7 +14,7 @@ keymap("i","jk","<Esc>",opts)
 keymap("n","<Space>",":",opts)
 
 keymap("n","<S-f>",":Telescope find_files<cr>",opts)
-keymap("n","<S-g>",":Telescope live_grep<cr>",opts)
+--keymap("n","<S-g>",":Telescope live_grep<cr>",opts)
 keymap("n","<S-b>",":Telescope buffers<cr>",opts)
 
 keymap("n","<C-[>",":BufferLineCloseLeft<cr>",opts)

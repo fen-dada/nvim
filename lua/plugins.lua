@@ -31,6 +31,7 @@ use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-dev
    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
 
+   use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',config = function() require('nvim-treesitter.configs').setup{} end}
   use { 'crag664/code_runner.nvim', require = "nvim-lua/plenary.nvim",config = function()  require('code_runner').setup({
     -- put here the commands by filetype
     filetype = {
@@ -56,15 +57,16 @@ end}
 }
 
 
-  use 'neovim/nvim-lspconfig'
+  --use 'neovim/nvim-lspconfig'
   -- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+--vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin`
   -- Default options:
+ vim.cmd("colorscheme kanagawa")
 require('kanagawa').setup({
     undercurl = true,           -- enable undercurls
     commentStyle = { italic = true },
@@ -75,7 +77,7 @@ require('kanagawa').setup({
     variablebuiltinStyle = { italic = true},
     specialReturn = true,       -- special highlight for the return keyword
     specialException = true,    -- special highlight for exception handling keywords
-    transparent = false,        -- do not set background color
+    transparent = true,        -- do not set background color
     dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
     globalStatus = false,       -- adjust window separators highlight for laststatus=3
     terminalColors = true,      -- define vim.g.terminal_color_{0,17}
@@ -85,7 +87,7 @@ require('kanagawa').setup({
 })
 
 -- setup must be called before loading
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")
 -- examples for your init.lua
 use {
   "zbirenbaum/copilot.lua",

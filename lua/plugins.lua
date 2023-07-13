@@ -28,8 +28,13 @@ use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-dev
     })end
    }
        
-   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+-- install without yarn or npm
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
 
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
    use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',config = function() require('nvim-treesitter.configs').setup{} end}
   use { 'crag664/code_runner.nvim', require = "nvim-lua/plenary.nvim",config = function()  require('code_runner').setup({

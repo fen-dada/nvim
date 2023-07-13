@@ -1,8 +1,11 @@
 # Nvim config
-![nvim](https://pic.imgdb.cn/item/64afa4561ddac507ccbdb185.jpg)
 
-![nvim-tree](https://pic.imgdb.cn/item/64afa4751ddac507ccbe38a1.jpg)
-![nvim-term](https://pic.imgdb.cn/item/64afa4751ddac507ccbe385c.jpg)
+![nvim-1](pictures/nvim-1.png)
+![nvim-2](pictures/nvim-2.png)
+
+![nvim-3](pictures/nvim-3.png)
 This nvim config is based on packer.nvim in 100% lua.
+
 You can run`:PackerStatus`to see what plugins are compiled.
-[![](https://pic.imgdb.cn/item/64afa7011ddac507ccc88f78.jpg)](https://pic.imgdb.cn/item/64afa7011ddac507ccc88f78.jpg)
+![nvim-4](pictures/nvim-4.png)
+

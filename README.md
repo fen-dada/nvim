@@ -44,4 +44,4 @@ Keys | Function
 <Shift + l> | jump to the right tag file
 <j + k> | mapping to \<Esc>
 \<Space> | mapping to ":"
-<Ctrl + \> | toggle the terminal in nvim
+<Ctrl + \\> | toggle the terminal in nvim

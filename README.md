@@ -1,16 +1,16 @@
 # Nvim config
 ## Looks like
 
-![nvim-1](pictures/nvim-1.png)
-![nvim-2](pictures/nvim-2.png)
+![nvim-1](https://pic.imgdb.cn/item/64afa4561ddac507ccbdb185.jpg)
+![nvim-2](https://pic.imgdb.cn/item/64afa4751ddac507ccbe385c.jpg)
 
-![nvim-3](pictures/nvim-3.png)
+![nvim-3](https://pic.imgdb.cn/item/64afa4751ddac507ccbe38a1.jpg)
 ## Introduction
 This nvim config is based on packer.nvim in 100% lua.
 And this one runs on my macos.
 
 You can run`:PackerStatus`to see what plugins are loaded.
-![nvim-4](pictures/nvim-4.png)
+![nvim-4](https://pic.imgdb.cn/item/64afa7011ddac507ccc88f78.jpg)
 
 ## Start up
 * If you don't have a packer, see [Packer.nvim](https://github.com/wbthomason/packer.nvim.git) first.

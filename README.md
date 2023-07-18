@@ -13,7 +13,7 @@ You can run`:PackerStatus`to see what plugins are loaded.
 ![nvim-4](pictures/nvim-4.png)
 
 ## Start up
-* If you don't have a packer, see [Packer.nvim](https://github.com/iamcco/markdown-preview.nvim.git) first.
+* If you don't have a packer, see [Packer.nvim](https://github.com/wbthomason/packer.nvim.git) first.
 * Then run 
 ```shell
 git clone https://github.com/fen-dada/nvim.git

@@ -37,18 +37,7 @@ use({
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
    use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',config = function() require('nvim-treesitter.configs').setup{} end}
-  use { 'crag664/code_runner.nvim', require = "nvim-lua/plenary.nvim",config = function()  require('code_runner').setup({
-    -- put here the commands by filetype
-    filetype = {
-		    java = "cd $dir && javac $filename && java $filenamewithoutext",
-		    python = "python -u",
-		    typescript = "deno run",
-		    rust = "cd $dir && rustc $filename && $dir/$filenamewithoutext"
-	    },
-        })
-    end
-}
-  --use 'mfussenegger/nvim-dap'
+ use 'CRAG666/code_runner.nvim' --use 'mfussenegger/nvim-dap'
     
   use {'windwp/windline.nvim',config = function() require('wlsample.airline')
 --  the animated alternative. you can toggle animation by press `<leader>u9`
@@ -62,7 +51,7 @@ end}
 }
 
 
-  --use 'neovim/nvim-lspconfig'
+  use 'neovim/nvim-lspconfig'
   -- Unless you are still migrating, remove the deprecated commands from v1.x
 --vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -94,57 +83,106 @@ require('kanagawa').setup({
 -- setup must be called before loading
 -- vim.cmd("colorscheme kanagawa")
 -- examples for your init.lua
+--use {
+  --"zbirenbaum/copilot.lua",
+  --cmd = "Copilot",
+  --event = "InsertEnter",
+  --config = function()
+ --require('copilot').setup({
+  --panel = {
+    --enabled = true,
+    --auto_refresh = false,
+    --keymap = {
+      --jump_prev = "[[",
+      --jump_next = "]]",
+      --accept = "<CR>",
+      --refresh = "gr",
+      --open = "<M-CR>"
+    --},
+    --layout = {
+      --position = "bottom", -- | top | left | right
+      --ratio = 0.4
+    --},
+  --},
+  --suggestion = {
+    --enabled = true,
+    --auto_trigger = false,
+    --debounce = 75,
+    --keymap = {
+      --accept = "<M-l>",
+      --accept_word = false,
+      --accept_line = false,
+      --next = "<M-]>",
+      --prev = "<M-[>",
+      --dismiss = "<C-]>",
+    --},
+  --},
+  --filetypes = {
+    --yaml = false,
+    --markdown = false,
+    --help = false,
+    --gitcommit = false,
+    --gitrebase = false,
+    --hgcommit = false,
+    --svn = false,
+    --cvs = false,
+    --["."] = false,
+  --},
+  --copilot_node_command = 'node', -- Node.js version must be > 16.x
+  --server_opts_overrides = {},
+--})
+  --end,
+--}
 use {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
   event = "InsertEnter",
   config = function()
- require('copilot').setup({
-  panel = {
-    enabled = true,
-    auto_refresh = false,
-    keymap = {
-      jump_prev = "[[",
-      jump_next = "]]",
-      accept = "<CR>",
-      refresh = "gr",
-      open = "<M-CR>"
-    },
-    layout = {
-      position = "bottom", -- | top | left | right
-      ratio = 0.4
-    },
-  },
-  suggestion = {
-    enabled = true,
-    auto_trigger = false,
-    debounce = 75,
-    keymap = {
-      accept = "<M-l>",
-      accept_word = false,
-      accept_line = false,
-      next = "<M-]>",
-      prev = "<M-[>",
-      dismiss = "<C-]>",
-    },
-  },
-  filetypes = {
-    yaml = false,
-    markdown = false,
-    help = false,
-    gitcommit = false,
-    gitrebase = false,
-    hgcommit = false,
-    svn = false,
-    cvs = false,
-    ["."] = false,
-  },
-  copilot_node_command = 'node', -- Node.js version must be > 16.x
-  server_opts_overrides = {},
-})
+    require('copilot').setup({
+      panel = {
+        enabled = true,
+        auto_refresh = true,
+        keymap = {
+          jump_prev = "[[",
+          jump_next = "]]",
+          accept = "<CR>",
+          refresh = "gr",
+          open = "<M-CR>"
+        },
+        layout = {
+          position = "bottom", -- | top | left | right
+          ratio = 0.4
+        },
+      },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        debounce = 75,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = false,
+          accept_line = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
+      },
+      filetypes = {
+        yaml = false,
+        markdown = false,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+      },
+      copilot_node_command = 'node', -- Node.js version must be > 16.x
+      server_opts_overrides = {},
+    })
   end,
 }
-
 use {
   'nvim-tree/nvim-tree.lua',
   requires = {

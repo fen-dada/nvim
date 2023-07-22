@@ -7,7 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 
 keymap("n","<S-l>",":BufferLineCycleNext<cr>",opts)
 keymap("n","<S-h>",":BufferLineCyclePrev<cr>",opts)
-keymap("n","<C-l>",":NvimTreeToggle<cr>",opts)
+keymap("n","<F4>",":NvimTreeToggle<cr>",opts)
 keymap("v","<","<gv",opts)
 keymap("v",">",">gv",opts)
 keymap("i","jk","<Esc>",opts)

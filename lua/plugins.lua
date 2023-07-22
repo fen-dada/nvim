@@ -37,7 +37,24 @@ use({
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
    use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',config = function() require('nvim-treesitter.configs').setup{} end}
- use 'CRAG666/code_runner.nvim' --use 'mfussenegger/nvim-dap'
+ use {'CRAG666/code_runner.nvim',config = function()
+ require('code_runner').setup({
+  filetype = {
+    java = {
+      "cd $dir &&",
+      "javac $fileName &&",
+      "java $fileNameWithoutExt"
+    },
+    python = "python3 -u",
+    typescript = "deno run",
+    rust = {
+      "cd $dir &&",
+      "rustc $fileName &&",
+      "$dir/$fileNameWithoutExt"
+    },
+  },
+})
+end} --use 'mfussenegger/nvim-dap'
     
   use {'windwp/windline.nvim',config = function() require('wlsample.airline')
 --  the animated alternative. you can toggle animation by press `<leader>u9`

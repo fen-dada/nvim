@@ -7,7 +7,7 @@ require('keymaps')
 
 
 local opt = require("toggleterm").setup({
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<F5>]],
 
     start_in_insert=true,
 

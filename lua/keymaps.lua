@@ -19,6 +19,10 @@ keymap("n","<Space>",":",opts)
 
 keymap("n","<S-f>",":Telescope find_files<cr>",opts)
 
+keymap("n","gD",":lua vim.lsp.buf.declaration()<cr>",opts)
+keymap("n","gd",":lua vim.lsp.buf.definition()<cr>",opts)
+keymap("n","gr",":lua vim.lsp.buf.references()<cr>",opts)
+
 keymap("v","<S-i>",":normal I--<cr>",opts)
 
 keymap("n","s",":lua flash_jump()<cr>",opts)-- for flash.nvim leaderkey

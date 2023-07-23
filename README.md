@@ -38,7 +38,7 @@ keymap("n","C-\",:ToggleTerm<cr>",opts) // <Ctrl + \> to toggle terminal in nvim
 ```
 Keys | Function
 ---- | --------
-<Ctrl + l> | toggle NvimTree
+<F4> | toggle NvimTree
 <Shift + t> | focus on the Nvimtree
 <Shift + h> | jump to the left tag file
 <Shift + l> | jump to the right tag file

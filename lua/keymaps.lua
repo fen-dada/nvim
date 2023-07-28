@@ -17,7 +17,7 @@ keymap("v",">",">gv",opts)
 keymap("i","jk","<Esc>",opts)
 keymap("n","<Space>",":",opts)
 
-keymap("n","<S-f>",":Telescope find_files<cr>",opts)
+keymap("n","<C-f>",":Telescope find_files<cr>",opts)
 
 keymap("n","gD",":lua vim.lsp.buf.declaration()<cr>",opts)
 keymap("n","gd",":lua vim.lsp.buf.definition()<cr>",opts)

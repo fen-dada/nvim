@@ -1,7 +1,6 @@
 return require('packer').startup(function(use)
 
-
-  -- Packer can manage itself
+ -- Packer can manage itself
 
   use 'wbthomason/packer.nvim'
  -- use { "zbirenbaum/copilot.lua" }
@@ -38,24 +37,7 @@ use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-dev
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
    use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',config = function() require('nvim-treesitter.configs').setup{} end}
- use {'CRAG666/code_runner.nvim',config = function()
- require('code_runner').setup({
-  filetype = {
-    java = {
-      "cd $dir &&",
-      "javac $fileName &&",
-      "java $fileNameWithoutExt"
-    },
-    python = "python3 -u",
-    typescript = "deno run",
-    rust = {
-      "cd $dir &&",
-      "rustc $fileName &&",
-      "$dir/$fileNameWithoutExt"
-    },
-  },
-})
-end} --use 'mfussenegger/nvim-dap'
+   use {'CRAG666/code_runner.nvim'}
     
   use {'windwp/windline.nvim',config = function() require('wlsample.airline')
 --  the animated alternative. you can toggle animation by press `<leader>u9`
@@ -100,7 +82,7 @@ use {
   cmd = "Copilot",
   event = "InsertEnter",
   config = function()
-    require('copilot').setup({
+require('copilot').setup({
       panel = {
         enabled =true,
         auto_refresh = true,
@@ -142,8 +124,7 @@ use {
       },
       copilot_node_command = 'node', -- Node.js version must be > 16.x
       server_opts_overrides = {},
-    })
-  end,
+  })end 
 }
 use {
   'nvim-tree/nvim-tree.lua',
@@ -161,7 +142,6 @@ use {
   },
 }) 
   end
-
 }
 use "MunifTanjim/nui.nvim"
 use "rcarriga/nvim-notify"

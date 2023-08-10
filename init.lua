@@ -4,6 +4,8 @@ require('maps')
 require('plugins')
 require('lsp')
 require('keymaps')
+require('run_code')
+--require('copilot_config')
 
 local opt = require("toggleterm").setup({
     open_mapping = [[<F5>]],

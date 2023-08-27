@@ -6,8 +6,6 @@ require('lsp')
 require('keymaps')
 require('run_code')
 require('term')
---require('copilot_config')
-
 
 local alpha = function()
   return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
